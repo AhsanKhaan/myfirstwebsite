@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <article id="demo">
+        <P id="para">
+                helloiasdas
+        </P>
+
+    </article>
+    <article id="replace">
+        <a href="#" OnClick="replace()">Click Here To replace first Para</a>
+<p id="first">my first para</p>
+<p id="second">second para</p>
+    </article>
+    <script>
+        window.load=function(){
+    
+    var h1=document.createElement("h1");
+    var node=document.createTextNode("my js section");
+    h1.appendChild(node);
+    var demo=document.getElementById("demo");
+    demo.appendChild(h1);
+    var ul=document.createElement("ul");
+    var li=document.createElement("li");
+    var node1=document.createTextNode("Java Script");
+    li.appendChild(node1);
+    demo.appendChild(li);
+    //var setid=document.getElementByTagName("ul");
+    li1=document.createElement("li");
+    node2=document.createTextNode("css");
+    li1.appendChild(node2);
+    demo.appendChild(li1);
+    ul.setAttribute('id',"un");
+    //var id=document.getElementById("demo").style.setProperty(backgroundColor,"blue");
+    var p=document.getElementById("para");
+    demo.removeChild(p);
+    li.style.textAlign="center";
+    li.style.color="blue";
+    li.style.border="solid black 20px";
+
+        }
+        window.load();
+        function replace(){
+            var p=document.createElement("p");
+            var node=document.createTextNode("my new para");
+            p.appendChild(node);
+            var first=document.getElementById("first");
+            var parent=document.getElementById("replace");
+            parent.replaceChild(p,first);
+
+        }
+    </script>
+</body>
+</html>

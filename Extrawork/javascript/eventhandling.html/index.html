@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Event Handler</title>
+</head>
+
+<body>
+    <button onclick="myFunction()">Try it</button>
+
+    <article id="myDIV">
+        Hello World
+
+    </article>
+    <label id="lab">Enter Name:
+        <input for="lab" type="text" placeholder="Enter" id="focus" onfocus="changetext();" onblur="changesize();" />
+    </label>
+    <article id="mouse" onnmouseout="changecolor2(this);" onmouseover="changecolor(this);">
+        Hello change me when mouse pressed releases
+    </article>
+    <article id="myarticle">Hello i am article Element</article>
+    <form>
+        <label id="ac">Enter Account Number:
+            <input for="ac" type="text" id="accountnumber" onchange="change()"/>
+        </label>
+    </form>
+    <button id="eventlistner" onclick="myclick();">Event Changed</button>
+    
+    <script>
+        var event=document.getElementById("eventlistner");
+        event.addEventListener("click",myclick);
+        
+        function  show(){
+            
+        }
+            event.style.border="solid black 5px";
+            event.style.padding="100px 5px 10px 50px";
+
+        
+        function myclick(){
+            alert("hi this is my click function");
+        }
+        function myFunction() {
+            document.getElementById("myDIV").style.WebkitTransition = "all 2s"; // Code for Safari 3.1 to 6.0
+            document.getElementById("myDIV").style.transition = "all 2s";       // Standard syntax
+        }
+        function changetext() {
+            var focus = document.getElementById("focus");
+            focus.style.color = "pink";
+            focus.style.fontSize = "20px";
+
+        }
+        function changesize() {
+            var change = document.getElementById("focus");
+            change.style.Color = "yellow";
+            change.style.backgroundColor = "blue";
+
+        }
+        function changecolor(x) {
+            //var color=document.getElementById("mouse");
+            x.style.color = "pink";
+            x.style.backgroundColor = "black";
+            x.style.letterSpacing = "5px";
+
+        }
+        function changecolor2(x) {
+            x.style.color = "yellow";
+            x.style.letterSpacing = "10px"
+            x.style.fontSize = "50px";
+
+        }
+        document.onbeforeunload = undefined;
+        var x = document.getElementById("myarticle");
+        x.onunload = function () {
+            document.body.innerHTML = date();
+        }
+
+
+        function change() {
+            var account = document.getElementById("accountnumber");
+           
+            account.style.wordSpacing = "10px";
+            account.value = account.value.toUpperCase();
+            account.style.color ="green";
+            account.style.backgroundColor ="black";
+            
+        }
+
+    </script>
+    <style>
+            #myDIV {
+                color: brown;
+                background-color: coral;
+                width: 200px;
+                height: 300px;
+                /* transition:all 3s ease-in-out; */
+            }
+    
+            #myDIV:hover {
+                font-size: 30px;
+                width: 400px;
+                height: 600px;
+                color: cadetblue;
+                background-color: aqua;
+    
+            }
+        </style>
+</body>
+
+</html>
